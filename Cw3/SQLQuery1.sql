@@ -12,3 +12,4 @@ select * from Student
 INSERT INTO Student (IndexNumber, FirstName, LastName, BirthDate, IdEnrollment) VALUES (1,'Jan', 'Kowalski','1980-01-01',1)
 INSERT INTO Student (IndexNumber, FirstName, LastName, BirthDate, IdEnrollment) VALUES (2,'Karol', 'Nowak','1980-02-02',2)
 INSERT INTO Student (IndexNumber, FirstName, LastName, BirthDate, IdEnrollment) VALUES (3,'Ania', 'Bebzol','1980-03-03',3)
+
