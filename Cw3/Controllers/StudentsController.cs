@@ -25,7 +25,7 @@ namespace Cw3.Controllers
         public IActionResult GetStudents(string orderBy)
         {
             var list = new List<Student>();
-            using (var client = new SqlConnection("Data Source=db-mssql;Initial Catalog=pgago; Integrated Security=True"))
+            using (var client = new SqlConnection("Data Source=db-mssql;Initial Catalog=s19130; Integrated Security=True"))
             using (var command = new SqlCommand())
             {
                 command.Connection = client;
@@ -54,16 +54,16 @@ namespace Cw3.Controllers
         public IActionResult GetStudent(string id)
         {
             var list = new List<Object>();
-            using (var client = new SqlConnection("Data Source=db-mssql;Initial Catalog=pgago; Integrated Security=True"))
+            using (var client = new SqlConnection("Data Source=db-mssql;Initial Catalog=s19130; Integrated Security=True"))
             using (var command = new SqlCommand())
             {
                 command.Connection = client;
 
-                command.CommandText =   "select e.Semester Semester, " +
-                                        "st.Name StudiesName from Student s" +
-                                        "inner join Enrollment e on s.IdEnrollment=e.IdEnrollment" +
-                                        "inner join Studies st on e.IdStudy=st.IdStudy"+
-                                        $"where s.IndexNumber=@id";
+                command.CommandText = "select e.Semester Semester," +
+                                      "  st.Name StudiesName from Student s" +
+                                      "  inner join Enrollment e on s.IdEnrollment=e.IdEnrollment" +
+                                      "  inner join Studies st on e.IdStudy=st.IdStudy" +
+                                      "  where s.IndexNumber=@id";
                 command.Parameters.AddWithValue("id", id);
 
 
